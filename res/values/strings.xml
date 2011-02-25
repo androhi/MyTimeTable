@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My時刻表</string>
+    <string name="no_timetable">時刻表がありません</string>
+    <string name="menu_insert">追加</string>
+    <string name="menu_delete">削除</string>
+    <string name="menu_edit">編集</string>
+    <string name="menu_clear">クリア</string>
+    <string name="body">設定内容：</string>
+    <string name="confirm">戻る</string>
+    <string name="info_hour">時の編集</string>
+</resources>

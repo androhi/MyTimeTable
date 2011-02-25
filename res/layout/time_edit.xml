@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:admobsdk="http://schemas.android.com/apk/res/com.androhi.mytimetable"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:background="@color/dkgreen"
+		>
+		<TextView android:id="@+id/hour"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_marginLeft="10dip"
+			android:layout_gravity="center_vertical"
+			android:textSize="25sp"
+			android:textColor="@color/white"
+			android:gravity="center_vertical"
+			/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:textSize="25sp"
+			android:text="@string/info_hour"
+			android:textColor="@color/white"
+			android:gravity="center_vertical"
+			android:layout_weight="1"
+			/>
+		<Button android:id="@+id/confirm" 
+			android:text="@string/confirm"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			/>
+	</LinearLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_marginLeft="10dip"
+			android:text="@string/body"
+			/>
+		<TextView android:id="@+id/label_set_time"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			/>
+	</LinearLayout>
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:layout_marginTop="10dip"
+		>
+	<TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TableRow>
+			<Button android:id="@+id/btn00"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="00"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn01"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="01"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn02"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="02"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn03"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="03"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn04"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="04"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn05"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="05"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn06"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="06"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn07"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="07"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn08"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="08"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn09"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="09"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn10"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="10"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn11"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="11"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn12"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="12"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn13"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="13"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn14"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="14"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn15"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="15"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn16"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="16"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn17"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="17"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn18"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="18"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn19"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="19"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn20"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="20"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn21"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="21"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn22"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="22"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn23"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="23"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn24"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="24"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn25"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="25"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn26"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="26"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn27"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="27"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn28"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="28"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn29"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="29"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn30"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="30"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn31"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="31"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn32"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="32"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn33"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="33"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn34"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="34"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn35"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="35"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn36"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="36"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn37"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="37"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn38"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="38"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn39"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="39"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn40"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="40"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn41"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="41"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn42"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="42"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn43"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="43"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn44"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="44"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn45"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="45"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn46"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="46"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn47"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="47"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn48"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="48"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn49"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="49"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn50"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="50"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn51"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="51"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn52"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="52"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn53"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="53"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn54"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="54"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+		<TableRow>
+			<Button android:id="@+id/btn55"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="55"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn56"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="56"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn57"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="57"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn58"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="58"
+				android:onClick="setMinuteOnOff"
+				/>
+			<Button android:id="@+id/btn59"
+				android:layout_width="60dip"
+				android:layout_height="60dip"
+				android:text="59"
+				android:onClick="setMinuteOnOff"
+				/>
+		</TableRow>
+	</TableLayout>
+	</ScrollView>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="48dip"
+		>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.androhi.mytimetable"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="4" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name="com.androhi.mytimetable.MyTimetableActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.androhi.mytimetable.TimetableEdit" android:label="@string/app_name"></activity>
+
+		<!-- The application's publisher ID assigned by AdMob -->
+		<meta-data android:name="ADMOB_PUBLISHER_ID" android:value="a14d66f405243af"/>
+
+		<!-- AdMobActivity definition -->
+		<activity android:name="com.admob.android.ads.AdMobActivity"
+				  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+				  android:configChanges="orientation|keyboard|keyboardHidden" />
+
+		<!-- Track Market installs -->
+		<receiver  android:name="com.admob.android.ads.analytics.InstallReceiver"
+				   android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+			</intent-filter>
+		</receiver>
+		
+		<meta-data android:value="true" android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" />
+    </application>
+    
+    <!-- AdMob SDK permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+</manifest>
