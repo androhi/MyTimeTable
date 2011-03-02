@@ -4,4 +4,5 @@
 	<color name="white">#ffffffff</color>
 	<color name="blue">#ff0000ff</color>
 	<color name="dkgreen">#ff008800</color>
+	<color name="gray">#ff333333</color>
 </resources>

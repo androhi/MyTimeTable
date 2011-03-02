@@ -2,11 +2,23 @@
 <resources>
     <string name="app_name">My時刻表</string>
     <string name="no_timetable">時刻表がありません</string>
-    <string name="menu_insert">追加</string>
-    <string name="menu_delete">削除</string>
-    <string name="menu_edit">編集</string>
-    <string name="menu_clear">クリア</string>
+    <string name="menu_insert">時刻表を追加</string>
+    <string name="menu_delete">時刻表を削除</string>
+    <string name="menu_edit">選択時刻を編集</string>
+    <string name="menu_clear">選択時刻をクリア</string>
+    <string name="menu_title_edit">タイトルを編集</string>
     <string name="body">設定内容：</string>
     <string name="confirm">戻る</string>
     <string name="info_hour">時の編集</string>
+    <string name="label_title1">　駅：</string>
+    <string name="label_title2">路線：</string>
+    <string name="label_dlg_ok">保存</string>
+    <string name="label_dlg_cl">取消</string>
+    <string name="addNew">時刻表を追加</string>
+    <string-array name="array_type">
+    	<item>平日／上り</item>
+    	<item>平日／下り</item>
+    	<item>休日／上り</item>
+    	<item>休日／下り</item>
+    </string-array>
 </resources>

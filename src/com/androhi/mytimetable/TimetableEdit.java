@@ -13,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.admob.android.ads.AdView;
-import com.androhi.mytimetable.R;
 
 public class TimetableEdit extends Activity {
 
@@ -21,8 +20,10 @@ public class TimetableEdit extends Activity {
 	private TextView mMinuteLabel;
 	private int[] minuteList;
 	private Long mRowId;
-	private TableDbAdapter mDbHelper;
+	private Long mHour;
+	private SubTableDbAdapter mDbHelper;
 	private Resources mRes;
+	private int mType;
 	
 	private static final int BUTTON_ON = 1;
 	private static final int BUTTON_OFF = 0;
@@ -46,7 +47,7 @@ public class TimetableEdit extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mDbHelper = new TableDbAdapter(this);
+		mDbHelper = new SubTableDbAdapter(this);
 		mDbHelper.open();
 		
 		setContentView(R.layout.time_edit);
@@ -58,10 +59,20 @@ public class TimetableEdit extends Activity {
 		mRes = getResources();
 		
 		minuteList = new int[60];
-		mRowId = savedInstanceState != null ? savedInstanceState.getLong(TableDbAdapter.KEY_ROWID) : null;
+		mRowId = savedInstanceState != null ? savedInstanceState.getLong(SubTableDbAdapter.KEY_SUB_ROWID) : null;
+		mHour = savedInstanceState != null ? savedInstanceState.getLong(SubTableDbAdapter.KEY_SUB_HOUR) : null;
 		if(mRowId == null) {
 			Bundle extras = getIntent().getExtras();
-			mRowId = extras != null ? extras.getLong(TableDbAdapter.KEY_ROWID) : null;
+			mRowId = extras != null ? extras.getLong(SubTableDbAdapter.KEY_SUB_ROWID) : null;
+			//mHour = extras != null ? extras.getLong(SubTableDbAdapter.KEY_SUB_HOUR) : null;
+			mHour = extras.getLong(SubTableDbAdapter.KEY_SUB_HOUR);
+			mType = extras.getInt(SubTableDbAdapter.KEY_SUB_TYPE);
+		}
+		
+		if(mHour > 0) {
+			;
+		} else {
+			;
 		}
 		
 		populateFields();
@@ -91,12 +102,12 @@ public class TimetableEdit extends Activity {
 	
 	private void populateFields() {
 		if(mRowId != null) {
-			Cursor time = mDbHelper.fetchTimetable(mRowId);
+			Cursor time = mDbHelper.fetchTimetable(mRowId, mHour, mType);
 			startManagingCursor(time);
 			mHourLabel.setText(time.getString(
-					time.getColumnIndexOrThrow(TableDbAdapter.KEY_HOUR)));
+					time.getColumnIndexOrThrow(SubTableDbAdapter.KEY_SUB_HOUR)));
 			String minuteString = time.getString(
-					time.getColumnIndexOrThrow(TableDbAdapter.KEY_MINUTE));
+					time.getColumnIndexOrThrow(SubTableDbAdapter.KEY_SUB_MINUTE));
 			
 			String[] minuteData = minuteString.split(" ");
 			for(int ii = 0; ii<minuteData.length; ii++) {
@@ -123,7 +134,8 @@ public class TimetableEdit extends Activity {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		outState.putLong(TableDbAdapter.KEY_ROWID, mRowId);
+		outState.putLong(SubTableDbAdapter.KEY_SUB_ROWID, mRowId);
+		outState.putLong(SubTableDbAdapter.KEY_SUB_HOUR, mHour);
 	}
 	
 	@Override
@@ -152,26 +164,39 @@ public class TimetableEdit extends Activity {
 		long hour = 0;
 		minute = getMinuteData();
 		hour = Long.parseLong(mHourLabel.getText().toString());
-		mDbHelper.updateTimetable(mRowId, hour, minute);
+		boolean rslt = mDbHelper.updateTimetableMinute(mRowId, hour, minute, mType);
+		if(rslt) {
+			;
+		}
 	}
 	
 	private String getMinuteData() {
 		String min = null;
 		for(int ii = 0, cnt = 0; ii<60; ii++) {
 			if(minuteList[ii] == 1) {
-				int data = ii;
+				String data = changeIntToString(ii);
 				if(cnt == 0) {
-					min = Integer.toString(data);
+					min = data;
 				} else {
-					min += "  " + Integer.toString(data);
+					min += "  " + data;
 				}
 				cnt++;
 			}
 		}
 		if(min == null) {
-			min = TableDbAdapter.NO_DATA;
+			min = SubTableDbAdapter.NO_DATA;
 		}
 		return min;
+	}
+	
+	private String changeIntToString(int num) {
+		String str = null;
+		if((num >= 0) && (num <=9)) {
+			str = "0" + Integer.toString(num);
+		} else {
+			str = Integer.toString(num);
+		}
+		return str;
 	}
 
 	public void setMinuteOnOff(View view) {
